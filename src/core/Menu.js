@@ -12,7 +12,7 @@ const Menu = () => {
                 </Link>
             </li>
             <li className="nav-item">
-                <Link className='nav-link' to='/cart'>
+                <Link className='nav-link' to='/'>
                     Cart
                 </Link>
             </li>
