@@ -8,3 +8,10 @@ body {
   background: #22262a;
   margin: 0;
 }
+
+.footer{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}

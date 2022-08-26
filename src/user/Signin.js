@@ -28,10 +28,9 @@ const Signin = () => {
 
   return (
     <Base title='Sign In ' description='This is signin for user'>
-    <h1>
-       SignIn
+
        {signInForm()}
-    </h1>
+    
     </Base>
   )
 }
