@@ -97,7 +97,6 @@ const Signup = () => {
                         <div className="d-grid mt-3">
                         <button onClick ={onSubmit} type='button' className="btn btn-success">Submit</button>
                         </div>
-                       
                     </form>
                 </div>
             </div>
