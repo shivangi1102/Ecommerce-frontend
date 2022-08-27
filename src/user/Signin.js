@@ -48,7 +48,6 @@ const Signin = () => {
                 return <p>Redirect to user</p>
             }
         }
-    
         if(isauthenticate()){
             return <Redirect to="/"/>
         }
