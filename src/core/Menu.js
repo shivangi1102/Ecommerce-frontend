@@ -1,5 +1,10 @@
 import React from 'react'
 import { Link , withRouter} from 'react-router-dom'
+import { isauthenticate, signout } from '../auth/helper'
+
+
+
+
 
 const currentTab = (history, path) =>{
     if(history.location.pathname === path){
@@ -50,6 +55,7 @@ const Menu = ({history}) => {
                     Sign Up
                 </Link>
             </li>
+            {!isauthenticate() && (
             <li className="nav-item">
                 <Link
                 style={currentTab(history, '/signin')}
@@ -57,13 +63,20 @@ const Menu = ({history}) => {
                     SignIn
                 </Link>
             </li>
-            <li className="nav-item">
-                <Link
-                style={currentTab(history, '/signout')}
-                 className='nav-link' to='/signout'>
+            )}
+            {isauthenticate() && (
+                 <li className="nav-item">
+                <span className='nav-link text-warning'
+                onClick ={() =>{
+                    signout(() => {
+                        history.push("/")
+                    })
+                }}>
                     Signout
-                </Link>
-            </li>
+                </span>
+             </li>
+            )}
+           
         </ul>
     </div>
   )
