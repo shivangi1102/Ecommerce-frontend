@@ -11,6 +11,7 @@ import AdminDashBoard from './user/AdminDashBoard'
 import AddCategory from './admin/AddCategory'
 import AddProduct from './admin/AddProduct'
 import ManageCategories from './admin/ManageCategories'
+import ManageProducts from './admin/ManageProducts'
 
 const MyRoutes =() => {
     
@@ -26,6 +27,7 @@ const MyRoutes =() => {
       <AdminRoutes path='/admin/create/category' exact component={AddCategory} />
       <AdminRoutes path='/admin/categories' exact component={ManageCategories} />
       <AdminRoutes path='/admin/create/product' exact component={AddProduct} />
+      <AdminRoutes path='/admin/products' exact component={ManageProducts} />
     </Switch>
     </BrowserRouter>
   )
