@@ -66,21 +66,20 @@ export const getAllProduct = async () => {
 
 //delete a product
 
-export const deleteProduct = async (productId, userId,token) => {
-    try {
-        const response = await fetch(`${API}/product/${productId}/${userId}`, {
-            method: "DELETE",
-            headers: {
-                Accept: "application/json",
-                Authorization: `Bearer ${token}`
-            }
-        });
-        return await response.json();
-    } catch (err) {
-        return console.log(err);
-    }
-
-}
+export const deleteProduct = (productId, userId, token) => {
+    return fetch(`${API}/product/${productId}/${userId}`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(response => {
+        return response.json();
+      })
+      .catch(err => console.log(err));
+  };
+  
 
 //get a product
 export const getProduct = async productId => {
