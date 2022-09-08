@@ -96,19 +96,18 @@ export const getProduct = async productId => {
 
 //update prouct
 
-export const updateProduct = async (productId, userId,token, product) => {
-    try {
-        const response = await fetch(`${API}/product/${productId}/${userId}`, {
-            method: "PUT",
-            headers: {
-                Accept: "application/json",
-                Authorization: `Bearer ${token}`
-            },
-            body: product
-        });
-        return await response.json();
-    } catch (err) {
-        return console.log(err);
-    }
-
-}
+export const updateProduct = (productId, userId, token, product) => {
+    return fetch(`${API}/product/${productId}/${userId}`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: product
+    })
+      .then(response => {
+        return response.json();
+      })
+      .catch(err => console.log(err));
+  };
+  
